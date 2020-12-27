@@ -64,6 +64,36 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <!--
+        以下Resources配置在使用Mybatis的XML配置时,才需要配置以下资源编译路径
+        平常配置上也没问题
+        -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+            <!--
+            如果使用JSP资源,需要设定其编译到什么位置
+            编译到classes/META-INF/resources
+            同时也需要在main下创建对应文件夹
+            -->
+            <resource>
+                <directory>src/main/webapp</directory>
+                <targetPath>META-INF/resources</targetPath>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 
 </project>
