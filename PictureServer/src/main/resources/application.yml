@@ -7,3 +7,10 @@ spring:
 server:
   servlet:
     context-path: /pictureserver
+  port: 8001
+
+
+mybatis:
+  config-location: classpath:/mybatis.cfg.xml
+  type-aliases-package: com.yan.pojo
+  mapper-locations: classpath:/com/yan/mapper/*.*
