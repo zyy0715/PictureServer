@@ -26,7 +26,7 @@ public class Generator {
         String outputDir = System.getProperty("user.dir") + "/src/main/java";
 //		String outputDir = "C://Users/VULCAN/Desktop/new";
         // 表名, 注意大小写
-        String[] tableNames = new String[]{"course","score","student","teacher"};
+        String[] tableNames = new String[]{"t_account","t_user"};
         // 数据库地址
         String url = "jdbc:mysql://localhost:3306/test0622?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true";
         // 用户名
@@ -36,7 +36,7 @@ public class Generator {
         // 父包路径
         String parentPackage = "com.yan";
         // 需要去掉的表名前缀
-        String prefixTable = "";
+        String prefixTable = "t_";
         generate(outputDir, tableNames, url, userName, password, parentPackage, prefixTable);
     }
 
